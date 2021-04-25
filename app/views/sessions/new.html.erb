@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login & Register</title>
+	<%= stylesheet_link_tag "login" %>
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+</head>
+<body>
+<div class="login-form" style="background-image: url(<%= image_path("login-img/loginbanner.jpg") %>);">
+	<div class="form-box">
+		<div class="button-box">
+			<div id="btn"></div>
+			<div class="row">
+				
+				<button type="button" class="toggle-btn col-6" onclick="login()">Login</button>
+				<button type="button" class="toggle-btn col-6" onclick="register()">Register</button>
+			</div>
+		</div>
+		<div class="social-icons">
+		<img src="<%= image_path("login-img/fb.png") %>">
+		<img src="<%= image_path("login-img/tw.png") %>">
+		<img src="<%= image_path("login-img/gp.png") %>">
+	</div>
+	<form id="login" class="input-group" action="/login" method="POST">
+		<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+		<input type="text" class="input-field" placeholder="User name" name="user[username]" required="">
+		<input type="password" class="input-field" placeholder="Password" name="user[password]" required="">
+		<button type="submit" name="submit" class="submit-btn mt-5">Login</button>
+		
+	</form>
+	<form id="register" class="input-group" action="/register" method="POST">
+		<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+		<input type="text" class="input-field" placeholder="User name" name="user[username]" required="">
+		<input type="email" class="input-field" placeholder="Email" name="email" required="">
+		<input type="password" class="input-field" placeholder="Password" name="user[password]" required>
+		<input type="password" class="input-field" placeholder="Password Confirmation" name="user[password_confirmation]" required>
+		<button type="submit" class="submit-btn mt-5">Register</button>
+	</form>
+	</div>
+</div>
+<script>
+	var x = document.getElementById("login");
+	var y = document.getElementById("register");
+	var z = document.getElementById("btn");
+
+	function register(){
+		x.style.left = "-400px";
+		y.style.left = "50px";
+		z.style.left = "110px";
+	}
+	function login(){
+		x.style.left = "50px";
+		y.style.left = "450px";
+		z.style.left = "0";
+	}
+</script>
+<!-- Load Facebook SDK for JavaScript -->
+</body>
+</html>
