@@ -8,11 +8,7 @@ class SessionsController < ApplicationController
 			.try(:authenticate, params[:user][:password])
 	  	if(user)
 	  		session[:user_id] = user.id
-	  		render json: {
-	  			status: "OK",
-	  			logged_in: true,
-	  			user: user
-	  		}
+	  		redirect_to root_path
 	  	else
 	  		render json: {
 	  			status: 401
