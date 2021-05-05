@@ -1,29 +1,26 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
+  <p style="font-size: 3em">
+    <strong><%= @post.title %></strong>
+  </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @post.description %>
-</p>
+  <p style="font-size: 1.3em; font-style: italic; color: #666464">
+    <%= @post.description %>
+  </p>
 
-<p>
-  <strong>Body:</strong>
-  <%= @post.body %>
-</p>
+  <p style="font-size: 1.1em">
+    By 
+    <a style="color: #e2127A" href="#">
+      <%= User.find(@post.user_id).username %>
+    </a>
+    | <%= @post.created_at %>
+  </p>
+  <p>
+    <%= @post.body.html_safe %>
+  </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @post.user_id %>
-</p>
+  <%= link_to 'Back', root_path, class: "btn btn-primary" %>
 
-<p>
-  <strong>Category:</strong>
-  <%= @post.category_id %>
-</p>
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+  
+  </div>
