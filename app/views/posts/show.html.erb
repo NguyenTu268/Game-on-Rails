@@ -65,7 +65,7 @@
 
 <section class="game-author-section">
   <div class="container">
-    <div class="game-author-pic set-bg" data-setbg="img/author.jpg"></div>
+    <div class="game-author-pic set-bg" data-setbg="<%= image_path("author.jpg") %>"></div>
     <div class="game-author-info">
       <h4>Written by: <%= User.find(@post.user_id).username %></h4>
       <p>Vivamus volutpat nibh ac sollicitudin imperdiet. Donec scelerisque lorem sodales odio ultricies, nec rhoncus ex lobortis. Vivamus tincid-unt sit amet sem id varius. Donec elementum aliquet tortor. Curabitur justo mi, efficitur sed eros alique.</p>
