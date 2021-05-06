@@ -8,7 +8,11 @@ gem "bcrypt"
 gem 'rails', '~> 6.1.3'
 gem "sprockets-rails", :require => "sprockets/railtie"
 gem "bootstrap-sass", "~> 3.3.7"
-gem "jquery-rails"
+
+group :assets do
+  gem 'jquery-rails'
+end
+
 gem 'ckeditor'
 # Use mysql as the database for Active Record
 gem 'mysql2', '~> 0.5'

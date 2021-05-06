@@ -18,13 +18,16 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
-
   end
 
   # POST /posts or /posts.json
   def create
-    @post = Post.new(post_params)
-
+    if(!user_is_logged_in) 
+      redirect_to login_path
+    end
+    param = post_params
+    param[:user_id] = session[:user_id]
+    @post = Post.new(param)
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: "Post was successfully created." }
@@ -66,6 +69,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :image, :description, :body, :user_id, :category_id)
+      params.require(:post).permit(:title, :image, :description, :body, :category_id)
     end
 end

@@ -10,8 +10,8 @@
 <section class="games-single-page">
   <div class="container">
     <p id="notice"><%= notice %></p>
-    <div class="game-single-preview">
-      <img src="<%= image_path("games/big.jpg") %>" alt="">
+    <div class="game-single-preview mt-5">
+      <img style="border: 5px solid #555;" src="<%= image_path(@post.image) %>" alt="">
     </div>
     <div class="row">
       <div class="col-xl-9 col-lg-8 col-md-7 game-single-content">
