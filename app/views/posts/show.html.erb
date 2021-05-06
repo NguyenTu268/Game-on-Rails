@@ -11,7 +11,7 @@
   <div class="container">
     <p id="notice"><%= notice %></p>
     <div class="game-single-preview">
-      <img src="img/games/big.jpg" alt="">
+      <img src="<%= image_path("games/big.jpg") %>" alt="">
     </div>
     <div class="row">
       <div class="col-xl-9 col-lg-8 col-md-7 game-single-content">
@@ -72,3 +72,4 @@
     </div>
   </div>
 </section>
+<div class="fb-comments d-flex justify-content-center" data-href="http://game-on-rails.com/posts/<%= @post.id %>" data-width="1000" data-numposts="5"></div>
