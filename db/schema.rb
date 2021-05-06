@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2021_05_05_042546) do
   create_table "posts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "title"
     t.text "description"
+    t.text "image"
     t.text "body"
     t.integer "user_id"
     t.integer "category_id"

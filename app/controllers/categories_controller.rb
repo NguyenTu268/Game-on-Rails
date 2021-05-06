@@ -4,6 +4,7 @@ class CategoriesController < ApplicationController
   # GET /categories or /categories.json
   def index
     @categories = Category.all
+    render layout: false
   end
 
   # GET /categories/1 or /categories/1.json
@@ -13,6 +14,7 @@ class CategoriesController < ApplicationController
   # GET /categories/new
   def new
     @category = Category.new
+    render layout: false
   end
 
   # GET /categories/1/edit
